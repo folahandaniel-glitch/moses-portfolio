@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+  <!-- Sign in -->
+  <section class="login" id="login">
+    <form class="login-card" id="loginForm">
+      <h1>Admin sign in</h1>
+      <p class="muted">Use the email and password given to you by the Super Admin.</p>
+      <div class="notice warn" id="setupNotice" hidden>The site is not connected to Supabase yet. Open <code>config.js</code>, add your Supabase URL and anon key, then redeploy.</div>
+      <label for="lEmail">Email</label>
+      <input id="lEmail" type="email" autocomplete="username" required>
+      <label for="lPass">Password</label>
+      <input id="lPass" type="password" autocomplete="current-password" required>
+      <p class="err" id="loginErr" role="alert"></p>
+      <button class="btn primary" type="submit" id="loginBtn">Sign in</button>
+      <a class="back" href="/">Back to website</a>
+    </form>
+  </section>
+
+  <!-- App -->
+  <div class="shell" id="shell" hidden>
+    <aside class="side" id="side"></aside>
+    <main class="main" id="main"></main>
+  </div>
+
+  <dialog class="modal" id="modal"></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="/config.js"></script>
+  <script src="/assets/shared.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
